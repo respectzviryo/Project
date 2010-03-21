@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+    "http://struts.apache.org/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+
+	<form-beans>
+		<form-bean name="beginForm" type="ca.project.view.form.BeginForm" />
+		<form-bean name="addTaskForm" type="ca.project.view.form.AddTaskForm" />
+	</form-beans>
+
+	<!-- Action Mapping Definitions -->
+
+	<action-mappings>
+
+		<action path="/begin" type="org.apache.struts.actions.ForwardAction" parameter="/begin_page.jsp"/>
+    
+		<action path="/beginAction" type="ca.project.controller.action.BeginAction" scope="request" name="beginForm">
+ 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
+		</action>
+		
+		<action path="/tasks" type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="tasksList" path="/jsp/tasks.jsp"/>
+		</action>
+		
+		<action path="/addTask" type="org.apache.struts.actions.ForwardAction"  scope="request" name="formTaskList"
+			parameter="/jsp/addTask.jsp"/>
+		
+		<action path="/addTaskAction"
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="request" name="addTaskForm">
+
+ 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
+		</action>
+		
+		
+		
+	</action-mappings>
+	
+	
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+        <set-property property="contextConfigLocation" value="/WEB-INF/applicationContext.xml"/>
+    </plug-in>
+	
+	        
+</struts-config>

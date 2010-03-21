@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+ <!DOCTYPE hibernate-mapping
+           PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+             "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+  <hibernate-mapping>
+ 
+     <class name="ca.project.entity.MainRecord" table="main">
+            
+       <id name="id" type="int">
+            <column name="id" />
+            <generator class="increment" />
+      </id>
+ 
+      <property name="description" column="description" type="java.lang.String"/>
+      
+      <property name="name" column="name" type="java.lang.String"/>
+ 
+    </class>
+  </hibernate-mapping>
+		

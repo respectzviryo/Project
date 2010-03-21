@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    
+    <bean name="/addTaskAction" class="ca.project.controller.action.AddTaskAction">
+   	    <property name="m_mainHibernateDAO">
+	        <ref bean="mainRecordDao"/> 
+	    </property>
+    </bean>
+    
+    <bean name="/tasks" class="ca.project.controller.action.FormTaskListAction">
+   	    <property name="m_mainHibernateDAO">
+	        <ref bean="mainRecordDao"/> 
+	    </property>
+    </bean>
+    
+    
+   
+</beans>

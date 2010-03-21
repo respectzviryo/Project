@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+<beans>
+
+    <bean id="theDataSource" 
+     	class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/project"/>
+        <property name="username" value="root"/>
+        <property name="password" value="password"/>
+    </bean>
+    
+    <bean id="theSessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="theDataSource" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+            </props>
+        </property>
+        <property name="mappingResources">
+            <list>
+                <value>ca/project/entity/Main.hbm.xml</value>
+			</list>
+        </property>
+	</bean>
+        
+	<bean id="mainRecordDao" class="ca.project.dao.MainRecordDao">
+	    <property name="sessionFactory">
+	        <ref bean="theSessionFactory"/> 
+	    </property>
+	</bean>
+	
+	<!-- <bean id="projectManager" class="ca.project.module.project.Project">
+	    <property name="m_mainHibernateDAO">
+	        <ref bean="mainRecordDao"/> 
+	    </property>
+	</bean> -->
+    
+    
+    <import resource="action-servlet.xml"/>
+    
+</beans>
