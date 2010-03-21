@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="/WEB-INF/tld/struts-html.tld" prefix="html"%>
 <%@ taglib uri="/WEB-INF/tld/c.tld" prefix="c"%>
+<jsp:useBean id="RequestSessionKeys" class="ca.project.constants.RequestSessionKeys" />
 
 <html:html>
 <head>
@@ -13,10 +14,9 @@
 <body>
 
 	Hello <c:out value="${sessionScope.user}"/>!
-
 	<br>
 	<table style="border: 1px solid black;" cellspacing="2">
-	<c:forEach var="exam" items="${sessionScope.tasks}" varStatus="lineInfo">
+	<c:forEach var="exam" items="${requestScope[RequestSessionKeys.TASK_LIST]}" varStatus="lineInfo">
 		 <tr>
 			<td>${exam.description}</td>
 			<td>${exam.name}</td>

@@ -4,17 +4,15 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import ca.project.constants.RequestSessionKeys;
 import ca.project.dao.MainRecordDao;
 import ca.project.entity.MainRecord;
-
-
 
 public class FormTaskListAction extends Action {
 
@@ -23,11 +21,9 @@ public class FormTaskListAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		
-		HttpSession session = request.getSession();
 
 		List<MainRecord> records = m_mainHibernateDAO.getRecords();
-		session.setAttribute("tasks", records);
+		request.setAttribute(RequestSessionKeys.TASK_LIST, records);
 
 		return mapping.findForward("tasksList");
 	}
