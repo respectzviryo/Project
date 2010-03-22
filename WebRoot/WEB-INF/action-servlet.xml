@@ -16,6 +16,12 @@
 	    </property>
     </bean>
     
+    <bean name="/removeTask" class="ca.project.controller.action.RemoveTaskAction">
+   	    <property name="m_mainHibernateDAO">
+	        <ref bean="mainRecordDao"/> 
+	    </property>
+    </bean>
+    
     
    
 </beans>

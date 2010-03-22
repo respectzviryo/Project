@@ -30,7 +30,11 @@
 		
 		<action path="/addTaskAction"
 			type="org.springframework.web.struts.DelegatingActionProxy" scope="request" name="addTaskForm">
-
+ 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
+		</action>
+		
+		<action path="/removeTask"
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="request">
  		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
 		</action>
 		

@@ -16,11 +16,11 @@
 	Hello <c:out value="${sessionScope.user}"/>!
 	<br>
 	<table style="border: 1px solid black;" cellspacing="2">
-	<c:forEach var="exam" items="${requestScope[RequestSessionKeys.TASK_LIST]}" varStatus="lineInfo">
+	<c:forEach var="item" items="${requestScope[RequestSessionKeys.TASK_LIST]}" varStatus="lineInfo">
 		 <tr>
-			<td>${exam.description}</td>
-			<td>${exam.name}</td>
-			<td><a href="/Project/removeTask.do">delete</a></td>
+			<td>${item.description}</td>
+			<td>${item.name}</td>
+			<td><a href="/Project/removeTask.do?id=${item.id}">delete</a></td>
 		</tr>
 		</c:forEach>
 	</table>

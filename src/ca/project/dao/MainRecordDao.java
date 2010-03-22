@@ -2,6 +2,7 @@ package ca.project.dao;
 
 import java.util.List;
 
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import ca.project.entity.MainRecord;
@@ -20,8 +21,8 @@ public class MainRecordDao extends HibernateDaoSupport {
         getHibernateTemplate().saveOrUpdate(record);
     }
 
-    public void removeRecord(Long id) {
+    public void removeRecord(Integer id) {
         Object record = getHibernateTemplate().load(MainRecord.class, id);
-        getHibernateTemplate().delete(record);
+        getHibernateTemplate().delete(record);        
     }
 }
