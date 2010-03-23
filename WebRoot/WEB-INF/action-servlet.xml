@@ -22,6 +22,20 @@
 	    </property>
     </bean>
     
+    <bean name="/updateTaskAction" class="ca.project.controller.action.UpdateTaskAction">
+   	    <property name="m_mainHibernateDAO">
+	        <ref bean="mainRecordDao"/> 
+	    </property>
+    </bean>    
+    
+    <bean name="/editTask" class="ca.project.controller.action.EditTaskAction">
+   	    <property name="m_mainHibernateDAO">
+	        <ref bean="mainRecordDao"/> 
+	    </property>
+    </bean>    
+    
+        
+    
     
    
 </beans>

@@ -21,6 +21,7 @@
 			<td>${item.description}</td>
 			<td>${item.name}</td>
 			<td><a href="/Project/removeTask.do?id=${item.id}">delete</a></td>
+			<td><a href="/Project/editTask.do?id=${item.id}">edit</a></td>
 		</tr>
 		</c:forEach>
 	</table>

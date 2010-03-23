@@ -2,7 +2,6 @@ package ca.project.dao;
 
 import java.util.List;
 
-import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import ca.project.entity.MainRecord;
@@ -14,7 +13,7 @@ public class MainRecordDao extends HibernateDaoSupport {
     }
 
     public List<MainRecord> getRecords() {
-        return getHibernateTemplate().find("from ca.project.entity.MainRecord");
+        return getHibernateTemplate().find("from MainRecord");
     }
 
     public void saveRecord(MainRecord record) {

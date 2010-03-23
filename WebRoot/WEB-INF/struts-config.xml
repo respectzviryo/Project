@@ -9,6 +9,7 @@
 	<form-beans>
 		<form-bean name="beginForm" type="ca.project.view.form.BeginForm" />
 		<form-bean name="addTaskForm" type="ca.project.view.form.AddTaskForm" />
+		<form-bean name="updateTaskForm" type="ca.project.view.form.UpdateTaskForm" />
 	</form-beans>
 
 	<!-- Action Mapping Definitions -->
@@ -38,7 +39,15 @@
  		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
 		</action>
 		
+		<action path="/editTask"
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="request">
+ 		    <forward name="updateTask" path="/jsp/updateTask.jsp"></forward>
+		</action>
 		
+		<action path="/updateTaskAction"
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="request" name="updateTaskForm">
+ 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
+		</action>		
 		
 	</action-mappings>
 	
