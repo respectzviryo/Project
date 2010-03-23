@@ -30,9 +30,8 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts-extras-1.3.8.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/struts-taglib-1.3.8.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/hibernate3-2006-03-20.jar"/>
-	<classpathentry kind="lib" path="D:/PROJECT/Project/WebRoot/WEB-INF/lib/antlr-2.7.5H3.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/antlr-2.7.5H3.jar"/>
-	<classpathentry kind="lib" path="D:/downloads/jstl.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ehcache-1.2.4.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jstl.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

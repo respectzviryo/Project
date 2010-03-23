@@ -34,6 +34,7 @@
 		<pathelement location="${dom4j.jar}"/>
 		<pathelement location="${ehcache.jar}"/>
 		<pathelement location="${hibernate3.jar}"/>
+		<pathelement location="${jstl.jar}"/>
 		<pathelement location="${jta.jar}"/>
 		<pathelement location="${mysql-connector-java.jar}"/>
 		<pathelement location="${org-springframework-transaction.jar}"/>
@@ -61,33 +62,15 @@
 		<mkdir dir="${build.dir}"/>	
 		<javac srcdir="${project.dir}" destdir="${build.dir}" debug="true" classpathref="libs.path" deprecation="on" target="1.5"/>
 	</target>
-
-	<!-- <target name="jar" depends="compile-all">
-		<jar jarfile="${build.dir}/${jar}" basedir="${build.dir}" >
-		</jar>
-	</target> -->
 	
 	<target name="war" depends="clean-distribution, compile-all" description="Build the distribution">
 		<mkdir dir="${dist-app.dir}"/>
 		<copy todir="${dist.dir}/${project-webapp.dir}">
 			<fileset dir="${main.resources}">
-				<!--<exclude name="**/classes/**"/>-->
 			</fileset>
 		</copy>
 		
-		<!--<copy todir="${web.inf.dir	}/classes">
-			<fileset dir="${project.home}/build">
-				<include name="**/*.class"/>
-			</fileset>	
-		</copy>
-		
-		<copy todir="${web.inf.dir}/classes">
-			<fileset dir="${project.home}/WebRoot/WEB-INF/classes">
-				<include name="**/*.xml" />
-			</fileset>	
-		</copy> -->
-		
-		<war destfile="${dist-app.dir}/project.war" webxml="${web.inf.dir}/web.xml" defaultexcludes="true">
+		<war destfile="${dist-app.dir}/Project.war" webxml="${web.inf.dir}/web.xml" defaultexcludes="true">
 			<fileset dir="${dist.dir}/${project-webapp.dir}"/> 
 		</war>	
 	</target>
