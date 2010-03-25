@@ -10,6 +10,7 @@
 	<property file="build.properties"/>
 
 	<property name="project.dir" value="../src"/>
+	<property name="entities.dir" value="${project.dir}/ca/project/entity"/>
 	<property name="jar" value="project.jar"/>
 	<property name="build.dir" value="../build"/>
 	<property name="dist-app.dir" value="../dist"/>
@@ -70,9 +71,22 @@
 			</fileset>
 		</copy>
 		
+		<copy todir="${web.inf.dir}/classes">
+			<fileset dir="${build.dir}">
+			</fileset>
+		</copy>
+		
+		<copy todir="${web.inf.dir}/classes/ca/project/entity">
+			<fileset dir="${entities.dir}">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+		
 		<war destfile="${dist-app.dir}/Project.war" webxml="${web.inf.dir}/web.xml" defaultexcludes="true">
 			<fileset dir="${dist.dir}/${project-webapp.dir}"/> 
-		</war>	
+		</war>
+		
+		<delete dir="${dist.dir}"/>
 	</target>
 	
 	<!-- Clean the build -->
