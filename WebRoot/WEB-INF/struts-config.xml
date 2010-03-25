@@ -4,57 +4,82 @@
     "http://struts.apache.org/dtds/struts-config_1_1.dtd">
 
 <struts-config>
-  <data-sources />
+	<data-sources />
 
 	<form-beans>
-		<form-bean name="beginForm" type="ca.project.view.form.BeginForm" />
-		<form-bean name="addTaskForm" type="ca.project.view.form.AddTaskForm" />
-		<form-bean name="updateTaskForm" type="ca.project.view.form.UpdateTaskForm" />
+		<form-bean name="beginForm"
+			type="ca.project.view.form.BeginForm" />
+		<form-bean name="addTaskForm"
+			type="ca.project.view.form.AddTaskForm" />
+		<form-bean name="updateTaskForm"
+			type="ca.project.view.form.UpdateTaskForm" />
+		<form-bean name="FileUploadAndSave"
+			type="ca.project.view.form.StrutsUploadAndSaveForm" />
 	</form-beans>
 
 	<!-- Action Mapping Definitions -->
 
 	<action-mappings>
 
-		<action path="/begin" type="org.apache.struts.actions.ForwardAction" parameter="/begin_page.jsp"/>
-    
-		<action path="/beginAction" type="ca.project.controller.action.BeginAction" scope="request" name="beginForm">
- 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
+		<action path="/begin"
+			type="org.apache.struts.actions.ForwardAction"
+			parameter="/begin_page.jsp" />
+
+		<action path="/beginAction"
+			type="ca.project.controller.action.BeginAction" scope="request"
+			name="beginForm">
+			<forward name="tasks_page" path="/tasks.do" redirect="true" />
 		</action>
-		
-		<action path="/tasks" type="org.springframework.web.struts.DelegatingActionProxy">
-			<forward name="tasksList" path="/jsp/tasks.jsp"/>
+
+		<action path="/tasks"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="tasksList" path="/jsp/tasks.jsp" />
 		</action>
-		
-		<action path="/addTask" type="org.apache.struts.actions.ForwardAction"  scope="request" name="formTaskList"
-			parameter="/jsp/addTask.jsp"/>
-		
+
+		<action path="/addTask"
+			type="org.apache.struts.actions.ForwardAction" scope="request"
+			name="formTaskList" parameter="/jsp/addTask.jsp" />
+
 		<action path="/addTaskAction"
-			type="org.springframework.web.struts.DelegatingActionProxy" scope="request" name="addTaskForm">
- 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" name="addTaskForm">
+			<forward name="tasks_page" path="/tasks.do" redirect="true" />
 		</action>
-		
+
 		<action path="/removeTask"
-			type="org.springframework.web.struts.DelegatingActionProxy" scope="request">
- 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="tasks_page" path="/tasks.do" redirect="true" />
 		</action>
-		
+
 		<action path="/editTask"
-			type="org.springframework.web.struts.DelegatingActionProxy" scope="request">
- 		    <forward name="updateTask" path="/jsp/updateTask.jsp"></forward>
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request">
+			<forward name="updateTask" path="/jsp/updateTask.jsp"></forward>
 		</action>
-		
+
 		<action path="/updateTaskAction"
-			type="org.springframework.web.struts.DelegatingActionProxy" scope="request" name="updateTaskForm">
- 		    <forward name="tasks_page" path="/tasks.do" redirect="true"/>
-		</action>		
-		
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			scope="request" name="updateTaskForm">
+			<forward name="tasks_page" path="/tasks.do" redirect="true" />
+		</action>
+
+		<action path="/FileUploadAndSave"
+			type="ca.project.controller.action.StrutsUploadAndSaveAction"
+			name="FileUploadAndSave" scope="request" validate="true"
+			input="/jsp/FileUploadAndSave.jsp">
+			<forward name="success"
+				path="/jsp/downloaduploadedfile.jsp" />
+		</action>
+
 	</action-mappings>
-	
-	
-	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
-        <set-property property="contextConfigLocation" value="/WEB-INF/applicationContext.xml"/>
-    </plug-in>
-	
-	        
+
+
+	<plug-in
+		className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/applicationContext.xml" />
+	</plug-in>
+
+
 </struts-config>
