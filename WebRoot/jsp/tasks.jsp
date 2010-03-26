@@ -20,6 +20,9 @@
 		 <tr>
 			<td>${item.description}</td>
 			<td>${item.name}</td>
+			<td>
+				<img src="/Project/upload/${item.fileName}" style="height: 100px;"/>
+			</td>
 			<td><a href="/Project/removeTask.do?id=${item.id}">delete</a></td>
 			<td><a href="/Project/editTask.do?id=${item.id}">edit</a></td>
 		</tr>
