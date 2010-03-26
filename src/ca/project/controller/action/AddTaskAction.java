@@ -30,9 +30,7 @@ public class AddTaskAction extends Action {
 		FormFile myFile = newTask.getTheFile();
 		String fileName = myFile.getFileName();
 		String strDirectory = "upload";
-
-		String filePath = getServlet().getServletContext().getRealPath("/")
-				+ strDirectory;
+		String filePath = getServlet().getServletContext().getRealPath("/") + strDirectory;
 
 		boolean exists = (new File(filePath)).exists();
 		if (!exists)
@@ -42,8 +40,7 @@ public class AddTaskAction extends Action {
 			File fileToCreate = new File(filePath, fileName);
 			// If file does not exists create file
 			if (!fileToCreate.exists()) {
-				FileOutputStream fileOutStream = new FileOutputStream(
-						fileToCreate);
+				FileOutputStream fileOutStream = new FileOutputStream(fileToCreate);
 				fileOutStream.write(myFile.getFileData());
 				fileOutStream.flush();
 				fileOutStream.close();

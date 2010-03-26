@@ -16,6 +16,8 @@
       <property name="name" column="name" type="java.lang.String"/>
       
       <property name="fileName" column="file_name" type="java.lang.String"/>
+      
+      <property name="createdAt" column="created_at" type="java.sql.Timestamp"/>
  
     </class>
   </hibernate-mapping>

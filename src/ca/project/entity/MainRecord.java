@@ -1,16 +1,20 @@
 package ca.project.entity;
 
+import java.sql.Timestamp;
+
 public class MainRecord implements IMainRecord {    
     private Integer id = null;
     private String description = null;
     private String name = null;
     private String fileName = null;
+    private Timestamp createdAt = null;
     
-    public MainRecord(Integer id, String description, String name, String fileName) {
+    public MainRecord(Integer id, String description, String name, String fileName, Timestamp createdAt) {
         this.id = id;
         this.description = description;     
         this.name = name;
         this.fileName = fileName;
+        this.createdAt = createdAt;
     }
     
     public MainRecord() {
@@ -42,5 +46,13 @@ public class MainRecord implements IMainRecord {
 
 	public void setfileName(String fileName) {
 		this.fileName = fileName;
-	} 
+	}
+
+	public Timestamp getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Timestamp createdAt) {
+		this.createdAt = createdAt;
+	}
 }
