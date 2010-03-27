@@ -1,3 +1,8 @@
+form {
+	padding: 0px;
+	margin: 0px;
+}
+
 table.main {
 	border: 1px solid #CCCCFF;
 	width: 100%;
@@ -37,4 +42,24 @@ table.main tbody tr td {
 
 div.user_label {
 	float: right;
+}
+
+div.form-row {
+	border-bottom: 1px solid #DDDDDD;
+	clear: both;
+	padding: 10px;
+}
+
+#admin-contanier label {
+	color: #666666;
+	display: block;
+	float: left;
+	font-weight: normal !important;
+	padding: 0 1em 3px 0;
+	text-align: left;
+	width: 8em;
+}
+
+#admin-contanier div.form-row div.content {
+	padding-left: 9em;
 }
