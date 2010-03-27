@@ -11,28 +11,28 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import ca.project.constants.RequestSessionKeys;
-import ca.project.dao.MainRecordDao;
-import ca.project.entity.MainRecord;
+import ca.project.dao.PhotoDao;
+import ca.project.entity.Photo;
 
 public class FormTaskListAction extends Action {
 
-	private MainRecordDao m_mainHibernateDAO;
+	private PhotoDao m_mainHibernateDAO;
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 
-		List<MainRecord> records = m_mainHibernateDAO.getRecords();
+		List<Photo> records = m_mainHibernateDAO.getPhotos();
 		request.setAttribute(RequestSessionKeys.TASK_LIST, records);
 
 		return mapping.findForward("tasksList");
 	}
 
-	public MainRecordDao getM_mainHibernateDAO() {
+	public PhotoDao getM_mainHibernateDAO() {
 		return m_mainHibernateDAO;
 	}
 
-	public void setM_mainHibernateDAO(MainRecordDao hibernateDAO) {
+	public void setM_mainHibernateDAO(PhotoDao hibernateDAO) {
 		m_mainHibernateDAO = hibernateDAO;
 	}
 

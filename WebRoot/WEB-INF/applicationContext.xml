@@ -5,7 +5,7 @@
     <bean id="theDataSource" 
      	class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/project"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/jobeet"/>
         <property name="username" value="root"/>
         <property name="password" value="password"/>
     </bean>
@@ -19,23 +19,16 @@
         </property>
         <property name="mappingResources">
             <list>
-                <value>ca/project/entity/Main.hbm.xml</value>
+                <value>ca/project/entity/Photo.hbm.xml</value>
 			</list>
         </property>
 	</bean>
         
-	<bean id="mainRecordDao" class="ca.project.dao.MainRecordDao">
+	<bean id="photoDao" class="ca.project.dao.PhotoDao">
 	    <property name="sessionFactory">
 	        <ref bean="theSessionFactory"/> 
 	    </property>
-	</bean>
-	
-	<!-- <bean id="projectManager" class="ca.project.module.project.Project">
-	    <property name="m_mainHibernateDAO">
-	        <ref bean="mainRecordDao"/> 
-	    </property>
-	</bean> -->
-    
+	</bean>   
     
     <import resource="action-servlet.xml"/>
     

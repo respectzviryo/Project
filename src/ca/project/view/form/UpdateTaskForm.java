@@ -6,7 +6,6 @@ public class UpdateTaskForm extends ActionForm {
 	private static final long serialVersionUID = 1L;
 	
 	private String id;
-	private String name;
 	private String description;
 	
 	public UpdateTaskForm()
@@ -20,14 +19,6 @@ public class UpdateTaskForm extends ActionForm {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getId() {

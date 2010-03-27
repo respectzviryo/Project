@@ -9,7 +9,6 @@
 </head>
 <body>
 <html:form action="/updateTaskAction.do" method="POST">
-		<html:text property="name" value="${requestScope[RequestSessionKeys.TASK].name}" size="25"/>
 		<html:text property="description" value="${requestScope[RequestSessionKeys.TASK].description}" size="25"/>
 		<html:hidden property="id" value="${requestScope[RequestSessionKeys.TASK].id}"/>
 		<html:submit value="Submit"/>

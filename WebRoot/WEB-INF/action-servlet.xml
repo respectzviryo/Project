@@ -6,36 +6,32 @@
     
     <bean name="/addTaskAction" class="ca.project.controller.action.AddTaskAction">
    	    <property name="m_mainHibernateDAO">
-	        <ref bean="mainRecordDao"/> 
+	        <ref bean="photoDao"/> 
 	    </property>
     </bean>
     
     <bean name="/tasks" class="ca.project.controller.action.FormTaskListAction">
    	    <property name="m_mainHibernateDAO">
-	        <ref bean="mainRecordDao"/> 
+	        <ref bean="photoDao"/> 
 	    </property>
     </bean>
     
     <bean name="/removeTask" class="ca.project.controller.action.RemoveTaskAction">
    	    <property name="m_mainHibernateDAO">
-	        <ref bean="mainRecordDao"/> 
+	        <ref bean="photoDao"/> 
 	    </property>
     </bean>
     
     <bean name="/updateTaskAction" class="ca.project.controller.action.UpdateTaskAction">
    	    <property name="m_mainHibernateDAO">
-	        <ref bean="mainRecordDao"/> 
+	        <ref bean="photoDao"/> 
 	    </property>
     </bean>    
     
     <bean name="/editTask" class="ca.project.controller.action.EditTaskAction">
    	    <property name="m_mainHibernateDAO">
-	        <ref bean="mainRecordDao"/> 
+	        <ref bean="photoDao"/> 
 	    </property>
     </bean>    
-    
-        
-    
-    
-   
+       
 </beans>

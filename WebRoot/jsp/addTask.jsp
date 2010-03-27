@@ -8,7 +8,6 @@
 </head>
 <body>
 <html:form action="/addTaskAction.do" method="POST" enctype="multipart/form-data">
-		<html:text property="name" size="25"/>
 		<html:text property="description" size="25"/>
 		<html:file property="theFile"></html:file>
 		<html:submit value="Submit"/>

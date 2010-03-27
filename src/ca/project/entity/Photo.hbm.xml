@@ -4,7 +4,7 @@
              "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
   <hibernate-mapping>
  
-     <class name="ca.project.entity.MainRecord" table="main">
+     <class name="ca.project.entity.Photo" table="photo">
             
        <id name="id" type="int">
             <column name="id" />
@@ -12,10 +12,8 @@
       </id>
  
       <property name="description" column="description" type="java.lang.String"/>
-      
-      <property name="name" column="name" type="java.lang.String"/>
-      
-      <property name="fileName" column="file_name" type="java.lang.String"/>
+          
+      <property name="fileName" column="file_path" type="java.lang.String"/>
       
       <property name="createdAt" column="created_at" type="java.sql.Timestamp"/>
  

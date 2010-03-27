@@ -8,11 +8,11 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import ca.project.dao.MainRecordDao;
+import ca.project.dao.PhotoDao;
 
 public class RemoveTaskAction extends Action {
 
-	private MainRecordDao m_mainHibernateDAO;
+	private PhotoDao m_mainHibernateDAO;
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -22,7 +22,7 @@ public class RemoveTaskAction extends Action {
 		try {
 			id = Integer.parseInt(request.getParameter("id"));
 
-			getM_mainHibernateDAO().removeRecord(id);
+			getM_mainHibernateDAO().removePhoto(id);
 		} catch (Exception e) {
 			System.out.println("could not remove record. request id = "
 					+ String.valueOf(id));
@@ -31,11 +31,11 @@ public class RemoveTaskAction extends Action {
 		return mapping.findForward("tasks_page");
 	}
 
-	public MainRecordDao getM_mainHibernateDAO() {
+	public PhotoDao getM_mainHibernateDAO() {
 		return m_mainHibernateDAO;
 	}
 
-	public void setM_mainHibernateDAO(MainRecordDao hibernateDAO) {
+	public void setM_mainHibernateDAO(PhotoDao hibernateDAO) {
 		m_mainHibernateDAO = hibernateDAO;
 	}
 

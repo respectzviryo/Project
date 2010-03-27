@@ -8,12 +8,12 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import ca.project.dao.MainRecordDao;
-import ca.project.entity.MainRecord;
+import ca.project.dao.PhotoDao;
+import ca.project.entity.Photo;
 import ca.project.view.form.UpdateTaskForm;
 
 public class UpdateTaskAction extends Action {
-	private MainRecordDao m_mainHibernateDAO;
+	private PhotoDao m_mainHibernateDAO;
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -22,10 +22,9 @@ public class UpdateTaskAction extends Action {
 		Integer id = null;
 		try {
 			id = Integer.parseInt(updateForm.getId());
-			MainRecord record = getM_mainHibernateDAO().getRecord(id);
-			record.setName(updateForm.getName());
+			Photo record = getM_mainHibernateDAO().getPhoto(id);
 			record.setDescription(updateForm.getDescription());
-			getM_mainHibernateDAO().saveRecord(record);
+			getM_mainHibernateDAO().savePhoto(record);
 		} catch (Exception e) {
 			System.out.println("could not update record. request id = "
 					+ String.valueOf(id));
@@ -34,11 +33,11 @@ public class UpdateTaskAction extends Action {
 		return mapping.findForward("tasks_page");
 	}
 
-	public MainRecordDao getM_mainHibernateDAO() {
+	public PhotoDao getM_mainHibernateDAO() {
 		return m_mainHibernateDAO;
 	}
 
-	public void setM_mainHibernateDAO(MainRecordDao hibernateDAO) {
+	public void setM_mainHibernateDAO(PhotoDao hibernateDAO) {
 		m_mainHibernateDAO = hibernateDAO;
 	}
 

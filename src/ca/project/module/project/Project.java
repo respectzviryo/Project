@@ -1,16 +1,16 @@
 package ca.project.module.project;
 
-import ca.project.dao.MainRecordDao;
+import ca.project.dao.PhotoDao;
 
 public class Project {
 	
-	private MainRecordDao m_mainHibernateDAO;
+	private PhotoDao m_mainHibernateDAO;
 
-	public MainRecordDao getM_mainHibernateDAO() {
+	public PhotoDao getM_mainHibernateDAO() {
 		return m_mainHibernateDAO;
 	}
 
-	public void setM_mainHibernateDAO(MainRecordDao hibernateDAO) {
+	public void setM_mainHibernateDAO(PhotoDao hibernateDAO) {
 		m_mainHibernateDAO = hibernateDAO;
 	}
 

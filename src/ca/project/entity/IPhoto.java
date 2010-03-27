@@ -1,5 +1,5 @@
 package ca.project.entity;
 
-public interface IMainRecord {
+public interface IPhoto {
 
 }

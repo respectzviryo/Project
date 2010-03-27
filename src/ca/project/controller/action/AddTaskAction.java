@@ -12,13 +12,13 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
-import ca.project.dao.MainRecordDao;
-import ca.project.entity.MainRecord;
+import ca.project.dao.PhotoDao;
+import ca.project.entity.Photo;
 import ca.project.view.form.AddTaskForm;
 
 public class AddTaskAction extends Action {
 
-	private MainRecordDao m_mainHibernateDAO;
+	private PhotoDao m_mainHibernateDAO;
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -47,21 +47,20 @@ public class AddTaskAction extends Action {
 			}
 		}
 		
-		MainRecord mainRecord = new MainRecord();
+		Photo mainRecord = new Photo();
 		mainRecord.setDescription(newTask.getDescription());
-		mainRecord.setName(newTask.getName());
 		mainRecord.setfileName(fileName);
 
-		getM_mainHibernateDAO().saveRecord(mainRecord);
+		getM_mainHibernateDAO().savePhoto(mainRecord);
 
 		return mapping.findForward("tasks_page");
 	}
 
-	public MainRecordDao getM_mainHibernateDAO() {
+	public PhotoDao getM_mainHibernateDAO() {
 		return m_mainHibernateDAO;
 	}
 
-	public void setM_mainHibernateDAO(MainRecordDao hibernateDAO) {
+	public void setM_mainHibernateDAO(PhotoDao hibernateDAO) {
 		m_mainHibernateDAO = hibernateDAO;
 	}
 
