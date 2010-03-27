@@ -7,7 +7,7 @@ public class MainRecord implements IMainRecord {
     private String description = null;
     private String name = null;
     private String fileName = null;
-    private Timestamp createdAt = null;
+    private Timestamp createdAt = new Timestamp(System.currentTimeMillis());
     
     public MainRecord(Integer id, String description, String name, String fileName, Timestamp createdAt) {
         this.id = id;
