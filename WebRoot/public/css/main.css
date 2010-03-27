@@ -1,0 +1,40 @@
+table.main {
+	border: 1px solid #CCCCFF;
+	width: 100%;
+}
+
+table.main thead tr {
+	background-color: #CCCCFF;
+}
+
+table.main thead tr th {
+	padding: 2px;
+	text-align: left;
+}
+
+table.main tfoot tr {
+	background-color: #CCCCFF;
+}
+
+table.main tfoot tr th {
+	padding:  2px;
+	text-align: left;
+}
+
+table.main tbody tr td {
+	border-bottom: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	padding: 3px;
+}
+
+#main h1 {
+	color: #555555;
+	font-size: 25px;
+	margin: 8px 0px;
+	padding: 3px 3px 3px 0px;
+	font-family: "Trebuchet MS",Arial,Verdana,sans-serif;
+}
+
+div.user_label {
+	float: right;
+}
