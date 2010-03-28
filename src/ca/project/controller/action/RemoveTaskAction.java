@@ -1,5 +1,7 @@
 package ca.project.controller.action;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,8 +23,17 @@ public class RemoveTaskAction extends Action {
 		Integer id = null;
 		try {
 			id = Integer.parseInt(request.getParameter("id"));
-
+		
+			String fileName = getM_mainHibernateDAO().getPhoto(id).getfileName();
+			String strDirectory = "upload";
+			String filePath = getServlet().getServletContext().getRealPath("/") + strDirectory + "/" + fileName;
+			File file = new File(filePath);
+			boolean exists = (file).exists();
+			if (exists)
+				file.delete();
+			
 			getM_mainHibernateDAO().removePhoto(id);
+
 		} catch (Exception e) {
 			System.out.println("could not remove record. request id = "
 					+ String.valueOf(id));

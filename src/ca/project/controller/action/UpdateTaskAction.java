@@ -38,9 +38,15 @@ public class UpdateTaskAction extends Action {
 			
 			id = Integer.parseInt(updateForm.getId());
 			Photo photo = getM_mainHibernateDAO().getPhoto(id);
+			String oldFileName = photo.getfileName();
+			
 			photo.setDescription(updateForm.getDescription());
 			photo.setfileName(fileName);
 			getM_mainHibernateDAO().savePhoto(photo);
+			
+			File oldFile = new File(filePath + "/" + oldFileName);
+			if (oldFile.exists())
+				oldFile.delete();
 		} catch (Exception e) {
 			System.out.println("could not update record. request id = "
 					+ String.valueOf(id));
