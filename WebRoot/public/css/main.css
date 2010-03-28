@@ -63,3 +63,14 @@ div.form-row {
 #admin-contanier div.form-row div.content {
 	padding-left: 9em;
 }
+
+input.create-button {
+	cursor: pointer;
+	font-family: Arial,sans-serif;
+	font-size: 11px;
+	padding: 3px 3px 3px 20px;
+	background: transparent url(../images/add.png) no-repeat scroll 3px 2px;
+	border-right: 4px solid #73B65A !important;
+	background-color: #FFFFCC;
+	float: right;
+}

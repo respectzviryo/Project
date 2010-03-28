@@ -17,8 +17,8 @@
 <body>
 
 	<div class="user_label">
-	<i>Your name:</i>
-		<b><c:out value="${sessionScope.user}" /></b>
+		<i>Your name:</i>
+		<b><c:out value="${sessionScope.user}" /> </b>
 	</div>
 	<div id="main">
 		<h1>
@@ -57,7 +57,7 @@
 							<td>
 								${item.description}
 							</td>
-							
+
 							<td>
 								-
 							</td>
@@ -67,8 +67,11 @@
 							</td>
 
 							<td>
-								<a href="/Project/removeTask.do?id=${item.id}">delete</a>
-								<a href="/Project/editTask.do?id=${item.id}">edit</a>
+								<a href="/Project/editTask.do?id=${item.id}"> <img
+										src="/Project/public/images/edit.png" border="0" /></a>
+								<a href="/Project/removeTask.do?id=${item.id}"> <img
+										src="/Project/public/images/delete.png" border="0" /> </a>
+
 							</td>
 						</tr>
 					</c:forEach>
@@ -81,10 +84,16 @@
 					</tr>
 				</tfoot>
 			</table>
+
+			<br/>
+			<input type="button" value="create"
+				onclick="document.location.href='/Project/addTask.do'"
+				class="create-button">
 		</div>
+
 	</div>
 
-	<br />
-	<a href="/Project/addTask.do">Add task</a>
+
+
 </body>
 </html:html>
