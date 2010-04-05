@@ -29,7 +29,8 @@ public class UpdateTaskAction extends Action {
 			String fileName = myFile.getFileName();
 			String filePath = getServlet().getServletContext().getRealPath("/upload");
 			File fileToCreate = new File(filePath, fileName);
-			if (!fileToCreate.exists()) {
+			boolean file = !fileName.equals("");
+			if (!fileToCreate.exists() && file) {
 				FileOutputStream fileOutStream = new FileOutputStream(fileToCreate);
 				fileOutStream.write(myFile.getFileData());
 				fileOutStream.flush();
@@ -41,11 +42,13 @@ public class UpdateTaskAction extends Action {
 			String oldFileName = photo.getfileName();
 			
 			photo.setDescription(updateForm.getDescription());
-			photo.setfileName(fileName);
+			if (file) {
+				photo.setfileName(fileName);
+			}
 			getM_mainHibernateDAO().savePhoto(photo);
 			
 			File oldFile = new File(filePath + "/" + oldFileName);
-			if (oldFile.exists())
+			if (oldFile.exists() && file)
 				oldFile.delete();
 		} catch (Exception e) {
 			System.out.println("could not update record. request id = "
