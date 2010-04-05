@@ -56,6 +56,14 @@
 							<html:textarea property="description"></html:textarea>
 						</div>
 					</div>
+					<div class="form-row">
+						<label>
+							Tag:
+						</label>
+						<div class="content">
+							<html:text property="tag"></html:text>
+						</div>
+					</div>
 				</fieldset>
 
 				<html:submit value="Submit" />

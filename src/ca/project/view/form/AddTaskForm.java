@@ -8,7 +8,16 @@ public class AddTaskForm extends ActionForm {
 
 	private String description;
 	private FormFile theFile;
+	private String tag;
 	
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
 	public FormFile getTheFile() {
 		return theFile;
 	}

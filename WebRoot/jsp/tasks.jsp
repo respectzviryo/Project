@@ -59,7 +59,11 @@
 							</td>
 
 							<td>
-								-
+								<c:forEach var="tag" items="${item.tags}" varStatus="lineInfo">
+									<c:if test="${tag != null}">
+										<c:out value="${tag.name}"></c:out>
+									</c:if>
+								</c:forEach>
 							</td>
 
 							<td>
@@ -68,7 +72,7 @@
 
 							<td>
 								<a href="/Project/editTask.do?id=${item.id}"> <img
-										src="/Project/public/images/edit.png" border="0" /></a>
+										src="/Project/public/images/edit.png" border="0" /> </a>
 								<a href="/Project/removeTask.do?id=${item.id}"> <img
 										src="/Project/public/images/delete.png" border="0" /> </a>
 
@@ -85,7 +89,7 @@
 				</tfoot>
 			</table>
 
-			<br/>
+			<br />
 			<input type="button" value="create"
 				onclick="document.location.href='/Project/addTask.do'"
 				class="create-button">

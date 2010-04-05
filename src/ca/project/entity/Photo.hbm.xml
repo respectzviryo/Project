@@ -1,22 +1,30 @@
-<?xml version="1.0"?>
- <!DOCTYPE hibernate-mapping
-           PUBLIC "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
-             "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
-  <hibernate-mapping>
- 
-     <class name="ca.project.entity.Photo" table="photo">
-            
-       <id name="id" type="int">
-            <column name="id" />
-            <generator class="increment" />
-      </id>
- 
-      <property name="description" column="description" type="java.lang.String"/>
-          
-      <property name="fileName" column="file_path" type="java.lang.String"/>
-      
-      <property name="createdAt" column="created_at" type="java.sql.Timestamp"/>
- 
-    </class>
-  </hibernate-mapping>
-		
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="ca.project.entity.Photo" table="photo">
+
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+
+		<property name="description" column="description"
+			type="java.lang.String" />
+
+		<property name="fileName" column="file_path"
+			type="java.lang.String" />
+
+		<property name="createdAt" column="created_at"
+			type="java.sql.Timestamp" />
+
+		<list name="tags" table="tag" cascade="all" lazy="false" inverse="true">
+			<key column="photo_id" on-delete="cascade"/>
+			<index column="id" />
+			<one-to-many class="ca.project.entity.Tag" />
+		</list>
+
+	</class>
+</hibernate-mapping>

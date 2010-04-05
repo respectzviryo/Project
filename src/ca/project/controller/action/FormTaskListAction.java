@@ -12,11 +12,22 @@ import org.apache.struts.action.ActionMapping;
 
 import ca.project.constants.RequestSessionKeys;
 import ca.project.dao.PhotoDao;
+import ca.project.dao.TagDao;
 import ca.project.entity.Photo;
+import ca.project.entity.Tag;
 
 public class FormTaskListAction extends Action {
 
 	private PhotoDao m_mainHibernateDAO;
+	private TagDao m_tagHibernateDAO;
+
+	public TagDao getM_tagHibernateDAO() {
+		return m_tagHibernateDAO;
+	}
+
+	public void setM_tagHibernateDAO(TagDao hibernateDAO) {
+		m_tagHibernateDAO = hibernateDAO;
+	}
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +35,19 @@ public class FormTaskListAction extends Action {
 
 		List<Photo> records = m_mainHibernateDAO.getPhotos();
 		request.setAttribute(RequestSessionKeys.TASK_LIST, records);
-
+		
+//		List<Tag> tags = getM_mainHibernateDAO().getPhoto(4).getTags();
+//		Iterator<Tag> tags = tag.iterator();
+		
+//	    for (Tag t : tags) {
+//	    	t.getId();
+//	    	System.out.println('d');
+//		}
+//		while (tags.hasNext()) {
+//			Tag ss = tags.next();
+//			System.out.println('d');
+//		}
+		
 		return mapping.findForward("tasksList");
 	}
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+    "http://www.springframework.org/dtd/spring-beans.dtd"> 
 <beans>
 
     <bean id="theDataSource" 
@@ -20,6 +21,7 @@
         <property name="mappingResources">
             <list>
                 <value>ca/project/entity/Photo.hbm.xml</value>
+                <value>ca/project/entity/Tag.hbm.xml</value>
 			</list>
         </property>
 	</bean>
@@ -29,6 +31,12 @@
 	        <ref bean="theSessionFactory"/> 
 	    </property>
 	</bean>   
+	
+	<bean id="tagDao" class="ca.project.dao.TagDao">
+	    <property name="sessionFactory">
+	        <ref bean="theSessionFactory"/> 
+	    </property>
+	</bean>	
     
     <import resource="action-servlet.xml"/>
     
