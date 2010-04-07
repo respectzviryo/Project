@@ -45,4 +45,32 @@
 		</property>
 	</bean>
 
+	<bean name="/photos"
+		class="ca.project.controller.action.ShowPhotosAction">
+		<property name="m_mainHibernateDAO">
+			<ref bean="photoDao" />
+		</property>
+		<property name="m_tagHibernateDAO">
+			<ref bean="tagDao" />
+		</property>
+	</bean>
+
+
+	<bean name="/photoDetails"
+		class="ca.project.controller.action.ShowPhotoDetailsAction">
+		<property name="m_mainHibernateDAO">
+			<ref bean="photoDao" />
+		</property>
+	</bean>
+
+
+	<bean name="/addComment"
+		class="ca.project.controller.action.AddCommentAction">
+		<property name="m_mainHibernateDAO">
+			<ref bean="photoDao" />
+		</property>
+	</bean>	
+
+
+
 </beans>

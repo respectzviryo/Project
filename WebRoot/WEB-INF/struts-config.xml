@@ -15,6 +15,8 @@
 			type="ca.project.view.form.UpdateTaskForm" />
 		<form-bean name="FileUploadAndSave"
 			type="ca.project.view.form.StrutsUploadAndSaveForm" />
+		<form-bean name="addCommentForm"
+			type="ca.project.view.form.AddCommentForm" />
 	</form-beans>
 
 	<!-- Action Mapping Definitions -->
@@ -71,6 +73,24 @@
 			<forward name="success"
 				path="/jsp/downloaduploadedfile.jsp" />
 		</action>
+
+		<action path="/photos"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="photoList" path="/jsp/photoList.jsp" />
+		</action>
+
+		<action path="/photoDetails"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="photoDetails" path="/jsp/photoDetails.jsp" />
+		</action>
+
+		<action path="/addComment"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="addCommentForm">
+			<forward name="comment" path="/jsp/comment.jsp" />
+		</action>
+
+		
 
 	</action-mappings>
 

@@ -14,11 +14,16 @@
 	<html:base />
 </head>
 
-<body>
-
-	<div class="user_label">
-		<i>Your name:</i>
-		<b><c:out value="${sessionScope.user}" /> </b>
+<body class="manage">
+	<div class="header">
+		<div class="main_links">
+			<a href="/Project/photos.do">Main Albom</a>
+			<a href="/Project/tasks.do">Manage Photos</a>
+		</div>
+		<div class="user_label">
+			<i>Your name:</i>
+			<b><c:out value="${sessionScope.user}" /> </b>
+		</div>
 	</div>
 	<div id="main">
 		<h1>
@@ -47,7 +52,7 @@
 				</thead>
 				<tbody>
 					<c:forEach var="item"
-						items="${requestScope[RequestSessionKeys.TASK_LIST]}"
+						items="${requestScope[RequestSessionKeys.PHOTO_LIST]}"
 						varStatus="lineInfo">
 						<tr>
 							<td>
@@ -60,9 +65,7 @@
 
 							<td>
 								<c:forEach var="tag" items="${item.tags}" varStatus="lineInfo">
-									<c:if test="${tag != null}">
-										<c:out value="${tag.name}"></c:out>
-									</c:if>
+									<c:out value="${tag.name}"></c:out>
 								</c:forEach>
 							</td>
 

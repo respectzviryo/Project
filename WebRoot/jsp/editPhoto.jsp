@@ -32,7 +32,7 @@
 			<html:form action="/updateTaskAction.do" method="POST"
 				enctype="multipart/form-data" styleId="admin-contanier">
 				<html:hidden property="id"
-					value="${requestScope[RequestSessionKeys.TASK].id}" />
+					value="${requestScope[RequestSessionKeys.PHOTO].id}" />
 
 
 				<fieldset>
@@ -42,7 +42,7 @@
 						</label>
 						<div class="content">
 							<img
-								src="/Project/upload/${requestScope[RequestSessionKeys.TASK].fileName}"
+								src="/Project/upload/${requestScope[RequestSessionKeys.PHOTO].fileName}"
 								style="width: 200px;" />
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 						</label>
 						<div class="content">
 							<html:textarea property="description"
-								value="${requestScope[RequestSessionKeys.TASK].description}"></html:textarea>
+								value="${requestScope[RequestSessionKeys.PHOTO].description}"></html:textarea>
 						</div>
 					</div>
 				</fieldset>

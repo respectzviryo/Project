@@ -32,7 +32,7 @@ table.main tbody tr td {
 	padding: 3px;
 }
 
-#main h1 {
+body.manage #main h1 {
 	color: #555555;
 	font-size: 25px;
 	margin: 8px 0px;
@@ -73,4 +73,60 @@ input.create-button {
 	border-right: 4px solid #73B65A !important;
 	background-color: #FFFFCC;
 	float: right;
+}
+
+div.main_links {
+	float: left;
+}
+
+div.header {
+	height: 30px;
+}
+
+body.main {
+	background: none repeat scroll 0 0 #EEDDDD;
+	font-family: "Trebuchet MS",arial,sans-serif;
+}
+
+body.main #main {
+	background: none repeat scroll 0 0 white;
+	margin: auto;
+	padding: 20px;
+	width: 680px;
+}
+
+body.main #main h1 {
+	border-bottom: 1px solid lightgrey;
+	margin-bottom: 20px;
+}
+
+body.main #main div.photo {
+	float: left;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	width: 160px
+}
+
+#footer {
+	clear: left;
+	text-align: right;
+}
+
+a.image img {
+	border: 4px solid lightgrey;
+}
+
+a.image:hover img {
+	border: 4px solid grey;
+}
+
+div.comment {
+	background: none repeat scroll 0 0 #EEEEEE;
+	border: 1px solid #DDDDDD;
+	margin: 10px;
+	padding: 5px;
+}
+
+div.comment .details {
+	font-weight: bold;
 }

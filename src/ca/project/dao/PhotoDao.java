@@ -15,6 +15,10 @@ public class PhotoDao extends HibernateDaoSupport {
     public List<Photo> getPhotos() {
         return getHibernateTemplate().find("from Photo");
     }
+    
+    public List<Photo> getPhotos(String tag) {
+        return getHibernateTemplate().find("from Photo");
+    }
 
     public void savePhoto(Photo record) {
         getHibernateTemplate().saveOrUpdate(record);

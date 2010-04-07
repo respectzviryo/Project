@@ -31,7 +31,7 @@ public class EditTaskAction extends Action {
 					+ String.valueOf(id));
 		}
 
-		request.setAttribute(RequestSessionKeys.TASK, record);
+		request.setAttribute(RequestSessionKeys.PHOTO, record);
 
 		return mapping.findForward("updateTask");
 	}

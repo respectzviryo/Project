@@ -6,13 +6,17 @@
 <html:html>
 <head>
 	<title>Hello everyone!</title>
-
+	<script type="text/javascript">
+		function setfocus(){
+			document.getElementById("username").focus();
+		}
+	</script>
 </head>
-<body>
+<body onload="setfocus()">
 <H4>Congratulations! You have run the Java project!</H4>
 <div>
 	<html:form action="/beginAction.do" method="POST">
-		<html:text property="user" size="25"/>
+		<html:text property="user" size="25" styleId="username"/>
 		<html:submit value="Submit"/>
 	</html:form>
 </div>

@@ -1,7 +1,5 @@
 package ca.project.controller.action;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,32 +8,21 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import ca.project.constants.RequestSessionKeys;
 import ca.project.dao.PhotoDao;
-import ca.project.dao.TagDao;
-import ca.project.entity.Photo;
+import ca.project.view.form.AddCommentForm;
 
-public class FormTaskListAction extends Action {
-
+public class AddCommentAction extends Action {
 	private PhotoDao m_mainHibernateDAO;
-	private TagDao m_tagHibernateDAO;
-
-	public TagDao getM_tagHibernateDAO() {
-		return m_tagHibernateDAO;
-	}
-
-	public void setM_tagHibernateDAO(TagDao hibernateDAO) {
-		m_tagHibernateDAO = hibernateDAO;
-	}
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-
-		List<Photo> records = m_mainHibernateDAO.getPhotos();
-		request.setAttribute(RequestSessionKeys.PHOTO_LIST, records);
 		
-		return mapping.findForward("tasksList");
+		
+		AddCommentForm newComment = (AddCommentForm) form;
+		
+		
+		return mapping.findForward("comment");
 	}
 
 	public PhotoDao getM_mainHibernateDAO() {
