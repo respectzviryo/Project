@@ -2,7 +2,6 @@ package ca.project.entity;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Set;
 
 public class Photo implements IPhoto {    
     private Integer id = null;
@@ -10,13 +9,14 @@ public class Photo implements IPhoto {
     private String fileName = null;
     private Timestamp createdAt = new Timestamp(System.currentTimeMillis());
     private List tags = null;
+    private List comments = null;
     
-    public Photo(Integer id, String description, String fileName, Timestamp createdAt) {
-        this.id = id;
-        this.description = description;     
-        this.fileName = fileName;
-        this.createdAt = createdAt;
-    }
+//    public Photo(Integer id, String description, String fileName, Timestamp createdAt) {
+//        this.id = id;
+//        this.description = description;     
+//        this.fileName = fileName;
+//        this.createdAt = createdAt;
+//    }
     
     public Photo() {
     	
@@ -57,6 +57,14 @@ public class Photo implements IPhoto {
 
 	public void setTags(List tags) {
 		this.tags = tags;
+	}
+	
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List comments) {
+		this.comments = comments;
 	}
 
 

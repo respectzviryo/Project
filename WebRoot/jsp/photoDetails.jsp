@@ -12,7 +12,8 @@
 		type="text/css">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<html:base />
-	<script type="text/javascript" src="/Project/public/javascripts/prototype.js"></script>
+	<script type="text/javascript"
+		src="/Project/public/javascripts/prototype.js"></script>
 </head>
 
 <body class="main">
@@ -35,8 +36,9 @@
 		</a>
 		<br />
 		<p>
-			"<c:out value="${requestScope[RequestSessionKeys.PHOTO].description}"></c:out>"
-			published on
+			"
+			<c:out value="${requestScope[RequestSessionKeys.PHOTO].description}"></c:out>
+			" published on
 			<c:out value="${requestScope[RequestSessionKeys.PHOTO].createdAt}"></c:out>
 			, tagged
 			<c:forEach var="tag"
@@ -51,6 +53,28 @@
 			<h2>
 				Comments
 			</h2>
+
+			<c:forEach var="comment"
+				items="${requestScope[RequestSessionKeys.PHOTO].comments}">
+				<c:if test="${comment != null}">
+					<div class="comment">
+						<p class="details">
+							<c:out value="${comment.author}"></c:out>
+							said
+						</p>
+						<p class="body">
+							<c:out value="${comment.body}"></c:out>
+						</p>
+					</div>
+				</c:if>
+
+			</c:forEach>
+
+
+
+
+
+
 			<div id="updateDiv">
 				<a onclick="document.getElementById('addComment').style.display='';"
 					href="javascript:;">Add a comment</a>

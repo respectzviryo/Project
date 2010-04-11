@@ -66,8 +66,8 @@
 
 	<bean name="/addComment"
 		class="ca.project.controller.action.AddCommentAction">
-		<property name="m_mainHibernateDAO">
-			<ref bean="photoDao" />
+		<property name="m_commentHibernateDAO">
+			<ref bean="commentDao" />
 		</property>
 	</bean>	
 

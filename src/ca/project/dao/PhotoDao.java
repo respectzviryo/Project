@@ -12,11 +12,13 @@ public class PhotoDao extends HibernateDaoSupport {
         return (Photo) getHibernateTemplate().get(Photo.class, id);
     }
 
-    public List<Photo> getPhotos() {
+    @SuppressWarnings("unchecked")
+	public List<Photo> getPhotos() {
         return getHibernateTemplate().find("from Photo");
     }
     
-    public List<Photo> getPhotos(String tag) {
+    @SuppressWarnings("unchecked")
+	public List<Photo> getPhotos(String tag) {
         return getHibernateTemplate().find("from Photo");
     }
 

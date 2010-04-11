@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="ca.project.entity.Comment" table="comment">
+
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+
+		<property name="author" column="author" type="java.lang.String" />
+		<property name="body" column="body" type="java.lang.String" />
+		
+		<property name="createdAt" column="created_at"
+			type="java.sql.Timestamp" />
+
+		<property name="photoId" column="photo_id"
+			type="java.lang.Integer" />
+
+
+	</class>
+</hibernate-mapping>

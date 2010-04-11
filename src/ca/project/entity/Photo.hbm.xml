@@ -20,10 +20,18 @@
 		<property name="createdAt" column="created_at"
 			type="java.sql.Timestamp" />
 
-		<list name="tags" table="tag" cascade="all" lazy="false" inverse="true">
-			<key column="photo_id" on-delete="cascade"/>
+		<list name="tags" table="tag" cascade="all" lazy="false"
+			inverse="true">
+			<key column="photo_id" on-delete="cascade" />
 			<index column="id" />
 			<one-to-many class="ca.project.entity.Tag" />
+		</list>
+
+		<list name="comments" table="comment" cascade="all" lazy="false"
+			inverse="true">
+			<key column="photo_id" on-delete="cascade" />
+			<index column="id" />
+			<one-to-many class="ca.project.entity.Comment" />
 		</list>
 
 	</class>

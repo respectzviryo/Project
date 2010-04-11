@@ -12,7 +12,8 @@ public class TagDao extends HibernateDaoSupport {
         return (Tag) getHibernateTemplate().get(Tag.class, id);
     }
 
-    public List<Tag> getTags() {
+    @SuppressWarnings("unchecked")
+	public List<Tag> getTags() {
         return getHibernateTemplate().find("from Tag");
     }
 

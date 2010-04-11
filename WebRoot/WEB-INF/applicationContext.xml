@@ -22,6 +22,7 @@
             <list>
                 <value>ca/project/entity/Photo.hbm.xml</value>
                 <value>ca/project/entity/Tag.hbm.xml</value>
+                <value>ca/project/entity/Comment.hbm.xml</value>
 			</list>
         </property>
 	</bean>
@@ -33,6 +34,12 @@
 	</bean>   
 	
 	<bean id="tagDao" class="ca.project.dao.TagDao">
+	    <property name="sessionFactory">
+	        <ref bean="theSessionFactory"/> 
+	    </property>
+	</bean>	
+	
+	<bean id="commentDao" class="ca.project.dao.CommentDao">
 	    <property name="sessionFactory">
 	        <ref bean="theSessionFactory"/> 
 	    </property>
