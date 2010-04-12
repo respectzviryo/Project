@@ -47,8 +47,9 @@ public class Photo implements IPhoto {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Tag> getTags() {
-		tags.removeAll(Collections.singletonList(null));
+	public List getTags() {
+		if (tags != null)
+			tags.removeAll(Collections.singletonList(null));
 		return tags;
 	}
 
@@ -57,7 +58,8 @@ public class Photo implements IPhoto {
 	}
 	
 	public List<Comment> getComments() {
-		comments.removeAll(Collections.singletonList(null));  
+		if (comments != null)
+			comments.removeAll(Collections.singletonList(null));  
 		return comments;
 	}
 
