@@ -19,7 +19,7 @@ public class PhotoDao extends HibernateDaoSupport {
     
     @SuppressWarnings("unchecked")
 	public List<Photo> getPhotos(String tag) {
-        return getHibernateTemplate().find("from Photo");
+        return getHibernateTemplate().find("select photo from Photo photo join photo.tags as tags where tags.name = ?", tag);
     }
 
     public void savePhoto(Photo record) {

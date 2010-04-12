@@ -44,9 +44,9 @@
 			<c:forEach var="tag"
 				items="${requestScope[RequestSessionKeys.PHOTO].tags}"
 				varStatus="lineInfo">
-				<c:if test="${tag.name != null}">
-					<a href="#"><c:out value="${tag.name}"></c:out> </a>&nbsp;
-					</c:if>
+
+				<a href="/Project/photos.do?tag=${tag.name}"><c:out value="${tag.name}"></c:out> </a>&nbsp;
+				
 			</c:forEach>
 		</p>
 		<div id="comments">
@@ -56,27 +56,23 @@
 
 			<c:forEach var="comment"
 				items="${requestScope[RequestSessionKeys.PHOTO].comments}">
-				
-					<div class="comment">
-						<p class="details">
-							<c:out value="${comment.author}"></c:out>
-							said
-						</p>
-						<p class="body">
-							<c:out value="${comment.body}"></c:out>
-						</p>
-					</div>
-				
+
+				<div class="comment">
+					<p class="details">
+						<c:out value="${comment.author}"></c:out>
+						said
+					</p>
+					<p class="body">
+						<c:out value="${comment.body}"></c:out>
+					</p>
+				</div>
+
 
 			</c:forEach>
 
 
-
-
-
-
 			<div id="updateDiv">
-				<a onclick="document.getElementById('addComment').style.display='';"
+				<a onclick="$('addComment').toggle();"
 					href="javascript:;">Add a comment</a>
 				<html:form styleId="addComment" method="post"
 					action="/addComment.do"
@@ -87,8 +83,9 @@
 					<label for="author">
 						Your name
 					</label>
-					<br />
 					<html:text property="author" styleId="author"></html:text>
+					<br>
+					<label for="body">Your comment</label>
 					<html:textarea property="body" styleId="body"></html:textarea>
 					<br />
 					<html:submit></html:submit>

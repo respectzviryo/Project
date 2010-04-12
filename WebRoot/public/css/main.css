@@ -130,3 +130,8 @@ div.comment {
 div.comment .details {
 	font-weight: bold;
 }
+
+#addComment label {
+	display: block;
+	margin-top: 5px;
+}

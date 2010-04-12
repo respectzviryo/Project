@@ -43,7 +43,7 @@
 				"${item.description}" published on ${item.createdAt}, tagged
 				<c:forEach var="tag" items="${item.tags}" varStatus="lineInfo">
 					<c:if test="${tag.name != null}">
-						<a href="#"><c:out value="${tag.name}"></c:out></a>&nbsp;
+						<a href="/Project/photos.do?tag=${tag.name}"><c:out value="${tag.name}"></c:out></a>&nbsp;
 					</c:if>
 				</c:forEach>
 			</div>
