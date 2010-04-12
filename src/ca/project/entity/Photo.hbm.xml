@@ -22,15 +22,15 @@
 
 		<list name="tags" table="tag" cascade="all" lazy="false"
 			inverse="true">
-			<key column="photo_id" on-delete="cascade" />
-			<index column="id" />
+			<key column="photo_id" on-delete="cascade" not-null="true"/>
+			<list-index column="id" />
 			<one-to-many class="ca.project.entity.Tag" />
 		</list>
 
 		<list name="comments" table="comment" cascade="all" lazy="false"
 			inverse="true">
 			<key column="photo_id" on-delete="cascade" />
-			<index column="id" />
+			<list-index column="id" />
 			<one-to-many class="ca.project.entity.Comment" />
 		</list>
 

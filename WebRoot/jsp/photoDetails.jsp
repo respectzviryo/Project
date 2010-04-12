@@ -56,7 +56,7 @@
 
 			<c:forEach var="comment"
 				items="${requestScope[RequestSessionKeys.PHOTO].comments}">
-				<c:if test="${comment != null}">
+				
 					<div class="comment">
 						<p class="details">
 							<c:out value="${comment.author}"></c:out>
@@ -66,7 +66,7 @@
 							<c:out value="${comment.body}"></c:out>
 						</p>
 					</div>
-				</c:if>
+				
 
 			</c:forEach>
 

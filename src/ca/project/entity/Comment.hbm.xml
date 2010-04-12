@@ -11,8 +11,8 @@
 			<generator class="increment" />
 		</id>
 
-		<property name="author" column="author" type="java.lang.String" />
-		<property name="body" column="body" type="java.lang.String" />
+		<property name="author"/>
+		<property name="body"/>
 		
 		<property name="createdAt" column="created_at"
 			type="java.sql.Timestamp" />
