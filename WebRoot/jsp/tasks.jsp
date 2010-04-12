@@ -60,7 +60,7 @@
 									style="height: 100px;" />
 							</td>
 							<td>
-								${item.description}
+								<c:out value="${item.description}"></c:out>
 							</td>
 
 							<td>
@@ -70,12 +70,12 @@
 							</td>
 
 							<td>
-								${item.createdAt}
+								<c:out value="${item.fullDate}"></c:out>
 							</td>
 
 							<td>
 								<a href="/Project/editTask.do?id=${item.id}"> <img
-										src="/Project/public/images/edit.png" border="0" /> </a>
+										src="/Project/public/images/edit.png" border="0" /></a>
 								<a href="/Project/removeTask.do?id=${item.id}"> <img
 										src="/Project/public/images/delete.png" border="0" /> </a>
 
@@ -86,7 +86,7 @@
 				<tfoot>
 					<tr>
 						<th colspan="5">
-							1 result
+							<c:out value="${requestScope[RequestSessionKeys.PHOTOS_AMMOUNT]}"></c:out> results
 						</th>
 					</tr>
 				</tfoot>

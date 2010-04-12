@@ -40,7 +40,7 @@
 						src="/Project/upload/${item.fileName}" style="height: 100px;">
 				</a>
 				<br />
-				"${item.description}" published on ${item.createdAt}, tagged
+				"${item.description}" published on ${item.date}, tagged
 				<c:forEach var="tag" items="${item.tags}" varStatus="lineInfo">
 					<c:if test="${tag.name != null}">
 						<a href="/Project/photos.do?tag=${tag.name}"><c:out value="${tag.name}"></c:out></a>&nbsp;

@@ -34,6 +34,7 @@ public class FormTaskListAction extends Action {
 
 		List<Photo> records = m_mainHibernateDAO.getPhotos();
 		request.setAttribute(RequestSessionKeys.PHOTO_LIST, records);
+		request.setAttribute(RequestSessionKeys.PHOTOS_AMMOUNT, records.size());
 		
 		return mapping.findForward("tasksList");
 	}
