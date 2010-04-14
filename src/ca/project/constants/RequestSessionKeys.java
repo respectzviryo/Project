@@ -7,5 +7,5 @@ public class RequestSessionKeys extends Globals {
 	public static final String PHOTO = "task";
 	public static final String COMMENT = "comment";
 	public static final String PHOTOS_AMMOUNT = "ammount";
-	
+	public static final String USER_NAME = "user";
 }

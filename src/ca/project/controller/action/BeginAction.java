@@ -9,6 +9,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import ca.project.constants.RequestSessionKeys;
 import ca.project.view.form.BeginForm;
 
 public class BeginAction extends Action {
@@ -22,7 +23,7 @@ public class BeginAction extends Action {
 		
 
 		HttpSession session = request.getSession();
-		session.setAttribute("user", user_form.getUser());
+		session.setAttribute(RequestSessionKeys.USER_NAME, user_form.getUser());
 		return mapping.findForward("tasks_page");
 	}
 
