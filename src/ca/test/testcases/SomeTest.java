@@ -17,9 +17,8 @@ public class SomeTest extends MockStrutsTestCase {
 	
 	 public void setUp() throws Exception { 
          super.setUp(); 
-         setServletConfigFile("D:/PROJECT/Project/dist/webapps/Project/WEB-INF/web.xml");
-         
-//         setContextDirectory(new File("WebRoot"));
+        
+         setContextDirectory(new File("WebRoot"));
          setInitParameter("validating","false"); 
      } 
 	
